@@ -1,0 +1,12 @@
+#Instructions to use:
+
+1.Unzip all files.
+
+2.In the folder where all unzipped files localed, use terminal and run
+  javac *.java
+  java P1
+
+3.After that you can see a serveral prompts for the Mini-data base.
+
+Use 'help' if you are not sure how to use this.
+There are some text files here for you to test the functions of the Database.
