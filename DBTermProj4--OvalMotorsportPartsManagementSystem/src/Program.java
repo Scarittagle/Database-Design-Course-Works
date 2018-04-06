@@ -13,6 +13,13 @@ import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
 
 public class Program {
 	//program execution
@@ -56,8 +63,9 @@ public class Program {
             	}
             	//pass for authentication & Enter System if sucess.
         		if(userName != null && password != null) {
+        			System.out.println("Processing...");
             		if(auth(userName, password)){
-                		system();
+                		system(userName); //<--- vulnerable point.
                 	}else {
                 		System.out.println("Wrong UserName or PassWord.");
                 	}
@@ -105,19 +113,44 @@ public class Program {
 	}
 	
 	//System UI & Functional Operation
-	public void system() {
+	public void system(String user) {
 		CommandParser parser = new CommandParser();
+		Controller control = new Controller();
+		//All system related info will be stored in info class.
+		Info lv1 = new Info();
 		
-		//test
-		System.out.println("Welcome! You're now in the System!"); 
+		//MAIN MENU 1st Level
+		System.out.println("Login Sucess.");
+		lv1.systemINFO();
+		System.out.println("Welcome, " + user + ".");
+		lv1.mainMenu();
 		System.out.print("> "); 
 		
 		Command cmd = null;
+		//command line
 	    while ((cmd = parser.fetchCommand()) != null) {
 	    	if(cmd.getCommand().equals("logout")) {
 	    		System.out.println("Log Out sucess.");
 	    		break;
 	        }
+	    	//access category
+	    	else if(cmd.getCommand().equals("chkcat")) {
+	    		control.chkcat();
+	    		//indicate level after leave
+	    		System.out.println("Current Level - MAIN MENU"); 
+	    	}
+	    	//access order
+	    	else if(cmd.getCommand().equals("order")) {
+	    		System.out.println("Function not implemented yet.");
+	    	}
+	    	//access shopping cart
+	    	else if(cmd.getCommand().equals("cart")) {
+	    		System.out.println("Function not implemented yet.");
+	    	}
+	    	//access account information
+	    	else if(cmd.getCommand().equals("acinfo")) {
+	    		System.out.println("Function not implemented yet.");
+	    	}
 	    	//STD UI code within loop
 	    	else if (cmd.getCommand().equals("")) {
 	        	
