@@ -32,6 +32,7 @@
 			System.out.println("");
 		}
 		
+		//Options - chkcat
 		//LV2
 		//Check inventory cat 2nd level Options
 		public void chkcatMenu() {
@@ -45,4 +46,35 @@
 		}
 		
 		//LV3
+		//Check inventory cat 3rd level Options - Filter op
+		public void chkcatFilterMenu() {
+			System.out.println("");
+			System.out.println("Current Level - BROWSE SPECIFIC PARTS");
+			System.out.println("OPTION:");
+			System.out.println("sF % % % %  - Set filter (ONLY supports 'sF year, brand, model, category' criteria");
+			System.out.println("b         - Browse");
+			System.out.println("back      - Go back to previous menu.");
+			System.out.println("");
+			System.out.println("****INSTRUCTION ON SET FILTER*****");
+			System.out.println("**********************************");
+			System.out.println("% means the category you put in,  ");
+			System.out.println("for example search body parts for ");
+			System.out.println("1986 Honda Accord, should enter   ");
+			System.out.println("sF 86 Honda Accord Body         ");
+			System.out.println("**********************************");
+		}
+		
+		
+		//Options - order
+		//LV2
+		//order 2nd level Options
+		public void orderMenu() {
+			System.out.println("");
+			System.out.println("Current Level - ORDER");
+			System.out.println("Below is your current active order.");
+			System.out.println("OPTION:");
+			System.out.println("back   - Go back to previous menu.");
+			System.out.println("");
+		}
+		
 	}

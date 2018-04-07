@@ -137,7 +137,7 @@ public class Program {
 	    	else if(cmd.getCommand().equals("chkcat")) {
 	    		control.chkcat();
 	    		//indicate level after leave
-	    		System.out.println("Current Level - MAIN MENU"); 
+	    		lv1.mainMenu(); 
 	    	}
 	    	//access order
 	    	else if(cmd.getCommand().equals("order")) {
