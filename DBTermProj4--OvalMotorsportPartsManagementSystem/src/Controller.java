@@ -82,7 +82,7 @@ public class Controller{
 	            String[] arr = cmd.getParameters();
 	            
 	            //Assign arguments into values
-	            int year = Integer.valueOf(arr[0]);
+	            String year = arr[0];
 	            String brand = arr[1];
 	            String model = arr[2];
 	            String category = arr[3];

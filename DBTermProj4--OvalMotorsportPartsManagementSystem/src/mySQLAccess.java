@@ -70,7 +70,7 @@ public class mySQLAccess {
         }
     }
     //BrowseFilteredInventory
-    public void browseFilteredInventory(int yr, String br, String mod, String cat) throws Exception {
+    public void browseFilteredInventory(String yr, String br, String mod, String cat) throws Exception {
     	try {
         	//Load MySQL Driver
         	Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -79,7 +79,8 @@ public class mySQLAccess {
                     .getConnection("jdbc:mysql://localhost:3306/"+dbName, dbUser, dbPwd);
             
             //WRITE QUERY HERE:
-            String query = "";
+            String query = "SELECT * FROM parts WHERE Years='"+yr+"'"
+            		+ " AND brand='"+ br +"' AND model='"+ mod +"' AND category='"+ cat +"'";
             
             // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
