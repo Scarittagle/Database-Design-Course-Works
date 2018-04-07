@@ -8,7 +8,12 @@
 //DB TERM PROJ
 /////////////
 //CREATED BY WEIWEI SU
+//QUERY WRITTEN BY BO WU
 //UNIV OF SOUTH FLORIDA @ 2018
+
+//Code below is modified from Vogella's JDBC MySQL Connection Tutorial
+//http://www.vogella.com/tutorials/MySQLJava/article.html
+//Date Accessed: 04/01/2018
 
 import java.sql.Connection;
 import java.sql.DriverManager;
